@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify';
 import VueTypedJs from 'vue-typed-js'
+import VueLazyload from 'vue-lazyload'
 
+Vue.use(VueLazyload)
 Vue.use(VueTypedJs)
 Vue.config.productionTip = false
 

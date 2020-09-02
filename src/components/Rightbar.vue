@@ -110,7 +110,8 @@ export default {
                         slidesToShow: 1,
                         arrows: true,
                         focusOnSelect:true,
-                        asNavFor: this.$parent.$children[0].$refs.c1
+                        asNavFor: this.$parent.$children[0].$refs.c1,
+                        fade: true,
                 }
         }     
   }

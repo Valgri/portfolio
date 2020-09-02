@@ -5,9 +5,10 @@
                 v-bind="settings"
                 >
                 <div class="wraper"  v-for='(img, i) in images' :key="i">
-                        <div class="inner" :style="{ backgroundImage: `url('${img.src}')` }">
+                        <!-- <div class="inner" :style="{ backgroundImage: `url('${img.src}')` }">
 
-                        </div>
+                        </div> -->
+                         <div class='inner' v-lazy:background-image="img.src"></div>
                 </div>
         </VueSlickCarousel>
 </div>
@@ -72,7 +73,8 @@ components: { VueSlickCarousel },
                         slidesToShow: 1,
                         dots: true,
                         focusOnSelect:true,
-                        asNavFor: null
+                        asNavFor: null,
+                        lazyLoad: "progressive",
                 }
         }     
   },
@@ -83,5 +85,6 @@ components: { VueSlickCarousel },
 </script>
 
 <style>
+
 
 </style>
