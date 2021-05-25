@@ -8,30 +8,32 @@
       <v-footer absolute class="font-weight-medium">
         <v-col class="text-center" cols="12" md="6">
           <vue-typed-js
-            :strings="['with Vue CLI', 'by Valeriy Hryshko']"
+            :strings="['with Vue CLI', 'by Valeriy H']"
             :typeSpeed="150"
             :backSpeed="100"
             :backDelay="300"
             :loop="true"
           >
-            <h4>
+            <h3>
               {{ new Date().getFullYear() }} — Portflio created
               <span class="typing"></span>
-            </h4>
+            </h3>
           </vue-typed-js>
         </v-col>
-        <v-col cols="12" md="6" class="end-cl">
-          <v-btn
-            v-for="(icon, i) in icons"
-            :key="i"
-            class="mx-10"
-            icon
-            :href="icon.link"
-            target="_blank"
-          >
-            <v-icon size="40px">{{ icon.item }}</v-icon>
-          </v-btn>
-        </v-col>
+<!--        <v-col cols="12" md="6" class="end-cl">-->
+<!--          <v-btn-->
+<!--            v-for="(icon, i) in icons"-->
+<!--            :key="i"-->
+<!--            class="mx-10"-->
+<!--            icon-->
+<!--            :href="icon.link"-->
+<!--            target="_blank"-->
+<!--            rel="noopener"-->
+<!--            aria-label="social buttons"-->
+<!--          >-->
+<!--            <v-icon size="40px">{{ icon.item }}</v-icon>-->
+<!--          </v-btn>-->
+<!--        </v-col>-->
       </v-footer>
     </v-card>
   </div>
@@ -63,7 +65,7 @@ export default {
 };
 </script>
 <style>
- @import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,700;1,400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,700;1,400&display=swap);
 .inner {
   background-position: 50%;
   background-repeat: no-repeat;
@@ -116,20 +118,37 @@ h1 {
   font-size: 36px;
   padding: 50px 0 100px 0;
   font-weight: 700;
-  text-shadow: -1px -1px #778086, 2px 2px 0 #000;
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.6) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 3s infinite;
+  /* text-shadow: -1px -1px #778086, 2px 2px 0 #000; */
+}
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
 }
 h1,
-h3 {
+h2 {
   line-height: 120%;
   text-align: center;
 }
-h3 {
+h2 {
   font-size: 24px;
   padding: 0 0 50px 0;
 }
-h4,
+h3,
 main {
-  color: #778086;
+  color: #3e454a;
 }
 main {
   height: calc(100vh - 70px);
@@ -163,57 +182,59 @@ img {
 .theme--light.v-btn.v-btn--icon:hover {
   color: #bf4442;
 }
-@media screen and (max-width: 1024px) {
-    main{
-        flex-direction: column-reverse;
-    }
-    .v-footer{
-        flex-direction: column-reverse;
-        justify-content: center;
-    }
-    .end-cl{
-        justify-content: center;
-    }
-    .col-md-6{
-        padding: 5px!important;
-    }
-    .wraper{
-        height: calc(50vh - 22px);
-    }
-    .slider,
-    .right{
-        width: 100%;
-        height: calc(50vh - 22px);
-    }
-    h1{
-        font-size: 30px;
-        padding: 20px 0 40px 0;
-    }
-    .slick-dots li button:before {
-        font-size: 13px;
-    }
-    main{
-        height: 100%;
-    }
+.slick-active {
+  z-index: 100000;
 }
-@media screen and (max-width: 480px){
-    h4{
-        font-size: 12px;
-    }
-    h3{
-        font-size: 17px;
-        padding-bottom: 20px;
-    }
-    .wraper{
-        height: 50vh;
-    }
-    .slick-dots{
-        bottom: 15px;
-    }
-    .slider,
-    .right{
-        height: 100%;
-    }
-    
+@media screen and (max-width: 1024px) {
+  main {
+    flex-direction: column-reverse;
+  }
+  .v-footer {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .end-cl {
+    justify-content: center;
+  }
+  .col-md-6 {
+    padding: 5px !important;
+  }
+  .wraper {
+    height: calc(50vh - 22px);
+  }
+  .slider,
+  .right {
+    width: 100%;
+    height: calc(50vh - 22px);
+  }
+  h1 {
+    font-size: 30px;
+    padding: 20px 0 40px 0;
+  }
+  .slick-dots li button:before {
+    font-size: 13px;
+  }
+  main {
+    height: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  h3 {
+    font-size: 12px;
+  }
+  h2 {
+    font-size: 17px;
+    padding-bottom: 20px;
+  }
+  .wraper {
+    height: 50vh;
+  }
+  .slick-dots {
+    bottom: 15px;
+  }
+  .slider,
+  .right {
+    height: 100%;
+  }
 }
 </style>

@@ -28,7 +28,7 @@ components: { VueSlickCarousel },
         return{
                 images: [
                 {
-                        src: require('../assets/village.6e96038c.png')
+                        src: require('../assets/village.6e96038c.jpg')
                 },
                  {
                         src: require('../assets/statewatch.dafa6e41.png')
@@ -37,7 +37,7 @@ components: { VueSlickCarousel },
                         src: require('../assets/peaceful.5d225d72.jpg')
                 },
                  {
-                        src: require('../assets/agro.8510843e.png')
+                        src: require('../assets/agro.8510843e.jpg')
                 },
                  {
                         src: require('../assets/monamor.c250e2f8.jpg')
@@ -66,7 +66,18 @@ components: { VueSlickCarousel },
                 {
                         src: require('../assets/React-test.943a9d78.png')
                 },        
-
+                {
+                        src: require('../assets/rest_api.png')
+                },
+                {
+                        src: require('../assets/anagog.png')
+                },  
+                {
+                        src: require('../assets/mern.png')
+                },
+                {
+                        src: require('../assets/vti.jpg')
+                },    
                 ],
         
                 settings: {
